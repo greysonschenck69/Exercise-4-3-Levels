@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://bxx1i5rjd0bti"]
 
-[ext_resource type="Texture2D" uid="uid://cbm466fwj6ehh" path="res://Assets/player.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bl4u861dmcwo1" path="res://Assets/player.png" id="1"]
 [ext_resource type="Script" path="res://Player/Jumping.gd" id="2"]
 [ext_resource type="Script" path="res://Player/Moving.gd" id="3"]
 [ext_resource type="Script" path="res://Player/StateMachine.gd" id="4"]

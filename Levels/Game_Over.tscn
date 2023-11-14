@@ -1,61 +1,72 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://c2pv7h7apy1re"]
 
-[ext_resource path="res://Assets/Thruster-Regular.ttf" type="FontFile" id=1]
-[ext_resource path="res://Levels/Game_Over.gd" type="Script" id=2]
+[ext_resource type="FontFile" uid="uid://b2042p0cliisw" path="res://Assets/Thruster-Regular.ttf" id="1"]
+[ext_resource type="Script" path="res://Levels/Game_Over.gd" id="2"]
 
-[sub_resource type="FontFile" id=1]
-size = 60
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id=2]
-size = 20
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -44.0
 offset_top = -26.0
 offset_right = 1052.0
 offset_bottom = 642.0
-color = Color( 0.203922, 0.227451, 0.25098, 1 )
+color = Color(0.203922, 0.227451, 0.25098, 1)
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 246.0
-theme_override_fonts/font = SubResource( 1 )
+theme_override_fonts/font = SubResource("1")
 text = "Congratulations! 
 You win!"
-align = 1
-valign = 1
 
 [node name="Play_Again" type="Button" parent="."]
+layout_mode = 0
 offset_left = 412.0
 offset_top = 300.0
 offset_right = 612.0
 offset_bottom = 340.0
 focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
-theme_override_fonts/font = SubResource( 2 )
+theme_override_fonts/font = SubResource("2")
 text = "Play Again?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Quit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 412.0
 offset_top = 360.0
 offset_right = 612.0
 offset_bottom = 400.0
 focus_neighbor_top = NodePath("../Play_Again")
 focus_previous = NodePath("../Play_Again")
-theme_override_fonts/font = SubResource( 2 )
+theme_override_fonts/font = SubResource("2")
 text = "Quit"
+
 [connection signal="pressed" from="Play_Again" to="." method="_on_Play_Again_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
